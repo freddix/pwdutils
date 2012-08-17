@@ -1,7 +1,7 @@
 Summary:	Utilities to manage the passwd and shadow user information
 Name:		pwdutils
 Version:	3.2.19
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.linux-nis.org/download/pwdutils/%{name}-%{version}.tar.bz2
@@ -22,9 +22,9 @@ URL:		http://www.thkukuk.de/pam/pwdutils/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnutls-devel
 BuildRequires:	libnscd-devel
 BuildRequires:	libtool
+BuildRequires:	openssl-devel
 BuildRequires:	pam-devel
 Requires:	pam
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
