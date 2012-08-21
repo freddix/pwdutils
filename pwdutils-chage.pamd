@@ -1,3 +1,5 @@
+# This allows root to change user infomation without being
+# prompted for a password
 auth		sufficient	pam_rootok.so
 auth		required	pam_deny.so
 password	include		common-password

@@ -3,5 +3,6 @@ GROUP=1000
 HOME=/home/users
 INACTIVE=-1
 EXPIRE=
-SHELL=/bin/bash
+SHELL=/usr/bin/bash
 SKEL=/etc/skel
+
