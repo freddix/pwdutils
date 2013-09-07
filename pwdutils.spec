@@ -1,7 +1,7 @@
 Summary:	Utilities to manage the passwd and shadow user information
 Name:		pwdutils
 Version:	3.2.19
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.linux-nis.org/download/pwdutils/%{name}-%{version}.tar.bz2
@@ -127,11 +127,14 @@ fi
 %attr(755,root,root) %{_sbindir}/vigr
 %attr(755,root,root) %{_sbindir}/vipw
 
+%dir %{_libdir}/pwdutils
 %attr(755,root,root) %{_libdir}/pwdutils/liblog_syslog.so*
+%attr(755,root,root) %{_libdir}/pwdutils/liblog_audit.so*
 
 %attr(600,root,root) %config(noreplace) %verify(not md5 mtime size) %ghost %{_sysconfdir}/shadow
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/logging
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/default/*
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/default/useradd
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/default/passwd
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/pam.d/chage
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/pam.d/chfn
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/pam.d/chsh
@@ -143,13 +146,7 @@ fi
 %attr(750,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*.local
 
 %attr(750,root,root) %dir %{_sysconfdir}/%{name}
-%attr(750,root,root) %dir %{_sysconfdir}/default
-
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/login.defs
-
-%dir %{_libdir}/pwdutils
-%dir /etc/skel
-%dir /etc/skel/tmp
 
 %{_mandir}/man?/*
 
